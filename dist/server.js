@@ -12,5 +12,5 @@ app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 (0, db_1.connect_db)();
 app.use('/', routes_1.default);
-const port = 7777;
-app.listen(port, () => console.log("server created."));
+const port = process.env.port || 7777;
+app.listen(port, () => console.log("server created on port " + port));
