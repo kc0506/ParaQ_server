@@ -12,6 +12,6 @@ connect_db();
 
 app.use('/', router);
 
-const port = 7777;
-app.listen(port, () => console.log("server created."));
+const port = process.env.port as any || 7777;
+app.listen(port, () => console.log("server created on port " + port));
 
