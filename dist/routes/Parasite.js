@@ -16,6 +16,7 @@ router.get('/all', (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     try {
         const data = yield Parasite_1.Parasite.find({});
         res.json({ parasites: data, error: false });
+        console.log("data: " + data);
     }
     catch (e) {
         res.json({ parasites: [], error: true });
